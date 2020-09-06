@@ -28,10 +28,11 @@ public class MainActivity extends AppCompatActivity {
         calculateButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                if(distanceEditText.getText().toString().length()==0 && timeEditText.getText().toString().length()==0){
+                if(distanceEditText.getText().toString().length()==0 || timeEditText.getText().toString().length()==0){
                     Toast t = Toast.makeText(MainActivity.this, R.string.toast_d_t,Toast.LENGTH_LONG);
                     t.show();
-                } else if(timeEditText.getText().toString().length()==0 || timeEditText.getText().toString().equals("0")){
+                }
+                else if(timeEditText.getText().toString().equals("0")){
                     Toast t = Toast.makeText(MainActivity.this, R.string.toast_t,Toast.LENGTH_LONG);
                     t.show();
                 } else {
